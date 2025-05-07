@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-nginx-deployment
+  name: nono-octopus-nginx
   namespace: non-octopus-app # Ensure this matches the Argo CD app's destination namespace
 spec:
   replicas: 1
