@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: non-octopus-app
+  namespace: not-octopus-argo # Ensure the Argo CD namespace is correct
+spec:
+  project: default # Or the name of your Argo CD project
+  source:
+    repoURL: 'https://github.com/Jtango18/jt-argo-test.git' # Replace with your Git repository URL
+    targetRevision: HEAD
+    path: non-octopus-app # The path to the manifests within the repository
+  destination:
+    server: 'https://kubernetes.default.svc' # Or the address of your Kubernetes API server
+    namespace: not-octopus-argo # The namespace where you want to deploy the app
+  syncPolicy:
+    automated:
+      prune: true    # Delete resources no longer present in Git
+      selfHeal: true # Reconcile resources back to the desired state
+    syncOptions:
+    - CreateNamespace=true # Automatically create the destination namespace if it doesn't exist
