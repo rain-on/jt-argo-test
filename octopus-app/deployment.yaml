@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: hello-world-app
-  namespace: jt-argo # Ensure the Argo CD namespace is correct
+  namespace: argocd # Ensure the Argo CD namespace is correct
 spec:
   project: default # Or the name of your Argo CD project
   source:
@@ -11,7 +11,7 @@ spec:
     path: first-app # The path to the manifests within the repository
   destination:
     server: 'https://kubernetes.default.svc' # Or the address of your Kubernetes API server
-    namespace: hello-world # The namespace where you want to deploy the app
+    namespace: octopus-managed-app # The namespace where you want to deploy the app
   syncPolicy:
     automated:
       prune: true    # Delete resources no longer present in Git

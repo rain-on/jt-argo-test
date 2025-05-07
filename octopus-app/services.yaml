@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-nginx-deployment
-  namespace: jt-argo # Ensure this matches the Argo CD app's destination namespace
+  namespace: hello-world # Ensure this matches the Argo CD app's destination namespace
 spec:
   replicas: 1
   selector:
@@ -30,7 +30,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: my-nginx-service
-  namespace: jt-argo # Ensure this matches the Argo CD app's destination namespace
+  namespace: octopus-managed-app # Ensure this matches the Argo CD app's destination namespace
 spec:
   selector:
     app: my-nginx
@@ -45,7 +45,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: nginx-configmap
-  namespace: jt-argo # Ensure this matches the Argo CD app's destination namespace
+  namespace: octopus-managed-app # Ensure this matches the Argo CD app's destination namespace
 data:
   index.html: |
     <!DOCTYPE html>

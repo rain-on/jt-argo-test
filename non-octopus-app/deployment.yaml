@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: non-octopus-app
-  namespace: not-octopus-argo # Ensure the Argo CD namespace is correct
+  namespace: argocd
 spec:
   project: default # Or the name of your Argo CD project
   source:
