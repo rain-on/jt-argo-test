@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: hello-world-app
+  name: octopus-app
   namespace: argocd # Ensure the Argo CD namespace is correct
 spec:
   project: default # Or the name of your Argo CD project
