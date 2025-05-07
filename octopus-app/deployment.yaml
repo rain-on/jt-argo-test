@@ -3,6 +3,10 @@ kind: Application
 metadata:
   name: octopus-app
   namespace: argocd # Ensure the Argo CD namespace is correct
+  annotations:
+    octopus.com/managed: true
+    octopus.com/project: "Project-1"
+    octopus.com/environment: "Environment-1"
 spec:
   project: default # Or the name of your Argo CD project
   source:
