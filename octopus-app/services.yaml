@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-nginx-deployment
-  namespace: hello-world # Ensure this matches the Argo CD app's destination namespace
+  namespace: octopus-managed-app # Ensure this matches the Argo CD app's destination namespace
 spec:
   replicas: 1
   selector:

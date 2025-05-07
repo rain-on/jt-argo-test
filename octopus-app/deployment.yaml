@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/Jtango18/jt-argo-test.git' # Replace with your Git repository URL
     targetRevision: HEAD
-    path: first-app # The path to the manifests within the repository
+    path: octopus-app # The path to the manifests within the repository
   destination:
     server: 'https://kubernetes.default.svc' # Or the address of your Kubernetes API server
     namespace: octopus-managed-app # The namespace where you want to deploy the app
