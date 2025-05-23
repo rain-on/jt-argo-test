@@ -10,7 +10,7 @@ spec:
   project: default # Or the name of your Argo CD project
   source:
     repoURL: 'https://github.com/Jtango18/jt-argo-test.git' # Replace with your Git repository URL
-    targetRevision: HEAD
+    targetRevision: main
     path: octopus-app # The path to the manifests within the repository
   destination:
     server: 'https://kubernetes.default.svc' # Or the address of your Kubernetes API server
