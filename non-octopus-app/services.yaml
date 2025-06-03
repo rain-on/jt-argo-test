@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image:  index.docker.io/nginx
+        image:  docker.io/nginx
         ports:
         - containerPort: 80
         volumeMounts:
