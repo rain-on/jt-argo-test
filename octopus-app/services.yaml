@@ -26,6 +26,25 @@ spec:
         configMap:
           name: nginx-configmap
 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-busybox-deployment
+  namespace: octopus-managed-app # Ensure this matches the Argo CD app's destination namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-busybox
+  template:
+    metadata:
+      labels:
+        app: my-busybox
+    spec:
+      containers:
+      - name: busybox-container
+        image: docker.io/busybox:unstable
+---
 apiVersion: v1
 kind: Service
 metadata:
