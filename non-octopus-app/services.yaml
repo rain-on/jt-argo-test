@@ -1,39 +1,39 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nono-octopus-nginx
+  name: nono-octopus-nginx:1.27.5
   namespace: not-octopus-argo # Ensure this matches the Argo CD app's destination namespace
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-nginx
+      app: my-nginx:1.27.5
   template:
     metadata:
       labels:
-        app: my-nginx
+        app: my-nginx:1.27.5
     spec:
       containers:
-      - name: nginx-container
-        image:  nginx
+      - name: nginx:1.27.5-container
+        image:  nginx:1.27.5
         ports:
         - containerPort: 80
         volumeMounts:
         - name: html-volume
-          mountPath: /usr/share/nginx/html
+          mountPath: /usr/share/nginx:1.27.5/html
       volumes:
       - name: html-volume
         configMap:
-          name: nginx-configmap
+          name: nginx:1.27.5-configmap
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-nginx-service
+  name: my-nginx:1.27.5-service
   namespace: not-octopus-argo # Ensure this matches the Argo CD app's destination namespace
 spec:
   selector:
-    app: my-nginx
+    app: my-nginx:1.27.5
   ports:
   - protocol: TCP
     port: 80
@@ -44,7 +44,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: nginx-configmap
+  name: nginx:1.27.5-configmap
   namespace: not-octopus-argo # Ensure this matches the Argo CD app's destination namespace
 data:
   index.html: |
