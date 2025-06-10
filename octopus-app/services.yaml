@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nginx-container
-        image: nginx:1.27.5
+        image: nginx:latest
         ports:
         - containerPort: 80
         volumeMounts:
@@ -45,7 +45,7 @@ spec:
     spec:
       containers:
       - name: busybox-container
-        image: docker.io/busybox:stable
+        image: docker.io/busybox:unstable
 ---
 apiVersion: v1
 kind: Service
