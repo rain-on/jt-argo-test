@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: my-nginx-deployment
   namespace: octopus-managed-app # Ensure this matches the Argo CD app's destination namespace
-  labels: 
-    release: #{Octopus.Environment.Name}
 spec:
   replicas: 1
   selector:
