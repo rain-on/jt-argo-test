@@ -69,7 +69,7 @@ data:
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Hello from Nginx!</title>
+      <title>#{Octopus.Deployment.Tenant.Name} would like to say hello</title>
     </head>
     <body>
       <h1>Good Chat from Kubernetes and ArgoCD!</h1>
