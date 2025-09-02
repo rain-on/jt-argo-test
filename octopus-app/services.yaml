@@ -72,6 +72,6 @@ data:
       <title>#{Octopus.Deployment.Tenant.Name} would like to say hello</title>
     </head>
     <body>
-      <h1>Good Chat from Kubernetes and ArgoCD!</h1>
+      <h1>Good Chat from Kubernetes, ArgoCD and #{Octopus.Deployment.Tenant.Name}!</h1>
     </body>
     </html>
