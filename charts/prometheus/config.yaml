@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-app-config
+data:
+  # Key-value pairs for configuration data
+  log_level: INFO
+  feature_flag_enabled: "true"
+  database_url: "jdbc:postgresql://mydb.example.com:5432/myappdb"
+  deployment_created_at: "Thursday, 4 September 2025 1:00:46 pm"
