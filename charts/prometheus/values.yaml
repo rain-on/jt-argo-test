@@ -1,0 +1,3 @@
+alertmanager:
+  # Enable or disable Alertmanager deployment
+  enabled: false
